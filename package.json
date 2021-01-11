@@ -1,0 +1,32 @@
+{
+  "name": "enye_cohort5_backend_task",
+  "version": "1.0.0",
+  "description": "Rest Api ",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmcWebCode40/Enye_Cohort5_Backend_Task.git"
+  },
+  "keywords": [
+    "node",
+    "javascript"
+  ],
+  "author": "cmcWebCode40",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmcWebCode40/Enye_Cohort5_Backend_Task/issues"
+  },
+  "homepage": "https://github.com/cmcWebCode40/Enye_Cohort5_Backend_Task#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
