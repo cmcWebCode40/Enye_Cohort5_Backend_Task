@@ -1,7 +1,7 @@
 const joi = require('@hapi/joi')
 
 const queryObject = () => ({
-  currency: joi.string().required().label('currency is required (e.g EUR,GBP,USD)'),
+  currency: joi.string().required().label('currency  (e.g EUR,GBP,USD)'),
   base: joi.string().required().label('base is required (e.g EUR)'),
 })
 

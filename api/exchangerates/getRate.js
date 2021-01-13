@@ -25,10 +25,10 @@ module.exports = async (req, res) => {
     const validateCurrencies = exchangeList.includes(...currencyList)
     const validateBase = exchangeList.includes(base)
     if (!validateBase) return res.status(422).send({
-      message: `base '${base}' is not supported`
+      message: `base '${base}' is not supported, use UpperCase instead (e.g ${base.toUpperCase()})`
     });
     if (!validateCurrencies) return res.status(422).send({
-      message: `currency(s) '${currency}' is not supported`
+      message: `currency(s) '${currency}' is not supported, use UpperCase instead (e.g ${currency.toUpperCase()})`
     });
 
     const AllExhangeRates = await axios.get(`https://api.exchangeratesapi.io/latest?base=${base}&symbols=${currencyList}`)
@@ -48,6 +48,17 @@ module.exports = async (req, res) => {
       }
     })
   } catch (error) {
+    if (error && error.response) {
+      const {
+        response: {
+          data,
+          status
+        }
+      } = error
+      return res.status(status).send({
+        error: data.error
+      });
+    }
     return res.status(500).send({
       error: 'Internal Server Error'
     });
