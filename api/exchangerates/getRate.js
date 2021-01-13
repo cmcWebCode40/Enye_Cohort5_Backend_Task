@@ -1,9 +1,10 @@
 const {
   default: axios
 } = require("axios");
+const moment = require('moment')
 const exchangeList = require("../../utils/exchangeAbrv");
 const ratesValidator = require("../../validation/exchangeRates");
-const moment = require('moment')
+
 
 
 module.exports = async (req, res) => {
@@ -34,7 +35,6 @@ module.exports = async (req, res) => {
     const {
       data: {
         rates,
-
       }
     } = AllExhangeRates
     const date = moment().format("YYYY-MM-DD")

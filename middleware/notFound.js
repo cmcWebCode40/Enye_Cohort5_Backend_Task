@@ -1,5 +1,7 @@
-module.exports = (req, res, next) => {
+module.exports = (req, res) => {
   const err = new Error('Not Found')
   err.status = 404
-  res.send({error:'page Not found'})
+  res.send({
+    error: 'page Not found'
+  })
 }
